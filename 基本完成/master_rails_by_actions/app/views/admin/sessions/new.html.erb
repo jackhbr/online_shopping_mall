@@ -1,0 +1,18 @@
+<div>
+  <table class="table table-striped">
+    <tr>
+      <th>uuid</th>
+      <th>是否点击标签栏</th>
+      <th>是否点击标签栏的购物车</th>
+    </tr>
+
+    <% @user.each do |user| %>
+      <tr>
+        <td><%= user.uuid %></td>
+        <td><%= user.clickflag %></td>
+        <td><%= user.plusflag %></td>
+      </tr>
+    <% end -%>
+  </table>
+
+</div>

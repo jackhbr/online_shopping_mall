@@ -1,0 +1,46 @@
+<html>
+<head>
+<style>
+.tab-p {
+font-size: 20px;
+letter-spacing: 2px;
+text-align:center;
+color: #1;
+margin:15px 0 20px;
+}
+</style>
+<script>
+function displayDate(){
+ document.getElementById("demo").style.visibility="visible";
+}
+</script>
+</head>
+<body>
+<div class="row" id="demo">
+  <p class="tab-p">看了又看，你可能还喜欢</p>
+  <% @productsflag.each do |product| %>
+    <div class="col-sm-3 col-md-12">
+      <div class="thumbnailflag" style="display:inline-block
+">
+        <%= link_to image_tag(product.main_product_image.image.url(:small), alt: product.title), product_path(product)%>
+         </div>
+        <div class="caption" style="display:inline-block
+">
+          <h4><%= link_to product.title, product_path(product), class: 'title' %></h4>
+          <p><strong>¥<%= product.price %></strong> <span class="msrp">¥<%= product.msrp %></span></p>
+          <p><%= show_add_to_cart product, html_class: "btn-xs" %></p>
+       
+      </div>
+    </div>
+  <% end -%>
+</div>
+
+<%= will_paginate @productsflag %>
+<script>
+ document.getElementById("demo").style.visibility="hidden";
+	setTimeout(function(){displayDate()
+    },3000);
+
+</script>
+</body>
+</html>

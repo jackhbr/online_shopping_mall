@@ -1,0 +1,26 @@
+.list-group-item a {
+  display: block;
+}
+.msrp {
+  text-decoration: line-through;
+}
+.thumbnail {
+  height: 310px;
+  &.detail {
+    height: auto;
+  }
+  a.title {
+    color: #333;
+  }
+}
+
+.thumbnailflag {
+  height: 120px;
+  width: 100px; 
+  &.detail {
+    height: auto;
+  }
+  a.title {
+    color: #333;
+  }
+}
